@@ -1,0 +1,28 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/server", "src-tauri"]
+
+[workspace.package]
+version = "0.2.0"
+license = "Apache-2.0"
+edition = "2021"
+
+[workspace.dependencies]
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+dirs = "6"
+futures-util = "0.3"
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tempfile = "3"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "fs", "process", "net"] }
+tokio-util = "0.7"
+
+[profile.release]
+# Small, fast binaries for distribution.
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

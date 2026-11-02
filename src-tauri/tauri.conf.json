@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Assist Writer",
+  "version": "0.2.0",
+  "identifier": "com.assistwriter.desktop",
+  "build": {
+    "frontendDist": "../out/renderer",
+    "beforeDevCommand": {
+      "script": "npm run build:ui",
+      "wait": true
+    },
+    "beforeBuildCommand": "npm run build:ui"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Assist Writer",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 800,
+        "minHeight": 500,
+        "center": true,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --disable-gpu"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "../build/icons/icon.ico",
+      "../build/icons/icon.png",
+      "../build/icons/128x128@2x.png"
+    ],
+    "copyright": "Copyright © 2026 Assist Writer",
+    "shortDescription": "AI-assisted writing with local Ollama models",
+    "fileAssociations": [
+      {
+        "ext": [
+          "awd"
+        ],
+        "name": "Assist Writer Document",
+        "description": "Assist Writer Document",
+        "role": "Editor"
+      }
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "../build/icons/icon.ico",
+        "installerHooks": "../build/installer-hooks.nsh"
+      }
+    }
+  }
+}

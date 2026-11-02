@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#8B3FD9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background tile -->
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#bg)"/>
+  <!-- Written line coming from the pen tip -->
+  <path d="M40 204 C 58 190, 70 214, 88 200" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <!-- Fountain-pen nib, tilted so the tip meets the line -->
+  <g transform="rotate(40 128 140)">
+    <rect x="102" y="62" width="52" height="30" rx="8" fill="#FFFFFF"/>
+    <path d="M128 216 L90 150 Q84 138 90 126 L106 98 L150 98 L166 126 Q172 138 166 150 Z" fill="#FFFFFF"/>
+    <path d="M128 214 L128 160" stroke="#5B44E0" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="128" cy="150" r="10" fill="#5B44E0"/>
+  </g>
+  <!-- AI sparkle -->
+  <path d="M190 34 L198 58 L222 66 L198 74 L190 98 L182 74 L158 66 L182 58 Z" fill="#FDE68A"/>
+  <path d="M220 104 L224 115 L235 119 L224 123 L220 134 L216 123 L205 119 L216 115 Z" fill="#FDE68A"/>
+</svg>

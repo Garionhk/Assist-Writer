@@ -1,0 +1,22 @@
+[package]
+name = "assist-writer-server"
+description = "Assist Writer web version: serves the editor and its API on the local network"
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+assist-core = { path = "../core" }
+axum = "0.8"
+futures-util.workspace = true
+gethostname = "1"
+hex = "0.4"
+local-ip-address = "0.6"
+percent-encoding = "2"
+rand = "0.9"
+scrypt = { version = "0.11", default-features = false, features = ["std"] }
+serde.workspace = true
+serde_json.workspace = true
+subtle = "2"
+tokio.workspace = true

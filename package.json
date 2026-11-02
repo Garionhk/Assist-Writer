@@ -1,0 +1,51 @@
+{
+  "name": "assist-writer",
+  "version": "0.2.0",
+  "description": "AI-assisted writing app powered by local Ollama models (Tauri + Rust)",
+  "author": "Assist Writer",
+  "private": true,
+  "scripts": {
+    "build:ui": "vite build --config vite.ui.config.ts --logLevel warn",
+    "app:dev": "tauri dev",
+    "app:build": "tauri build",
+    "server:build": "npm run build:ui && cargo build --release -p assist-writer-server",
+    "dist": "tauri build && cargo build --release -p assist-writer-server && node scripts/collect-dist.mjs",
+    "icon": "tauri icon build/icon.svg -o build/icons && node scripts/finish-icons.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:rust": "cargo test --workspace",
+    "bench": "esbuild scripts/bench.ts --bundle --platform=node --target=node20 --format=cjs --outfile=out/bench.js --log-level=warning && node out/bench.js",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "docx": "^9.8.1",
+    "jszip": "^3.10.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/api": "^2.12.1",
+    "@tauri-apps/cli": "^2.12.1",
+    "@tauri-apps/plugin-dialog": "^2.8.1",
+    "@tiptap/core": "^3.31.4",
+    "@tiptap/extension-text-align": "^3.31.4",
+    "@tiptap/extension-text-style": "^3.31.4",
+    "@tiptap/pm": "^3.31.4",
+    "@tiptap/react": "^3.31.4",
+    "@tiptap/starter-kit": "^3.31.4",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "esbuild": "^0.28.2",
+    "marked": "^18.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7",
+    "vitest": "^5.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true
+  },
+  "license": "Apache-2.0"
+}
