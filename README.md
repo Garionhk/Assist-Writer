@@ -16,17 +16,31 @@ Built with Rust ([Tauri](https://tauri.app)), React and [TipTap](https://tiptap.
 
 ## Download
 
-Get the latest version from [**Releases**](../../releases/latest):
+**Latest version: [0.2.0](https://github.com/Garionhk/Assist-Writer/releases/tag/v0.2.0)** (all versions: [Releases](https://github.com/Garionhk/Assist-Writer/releases))
 
-| File | What it is |
-|---|---|
-| `AssistWriter-Setup-<version>.exe` | **Installer (recommended).** Start menu and desktop shortcuts, opens `.awd` files, uninstall from Windows Settings. |
-| `AssistWriter-Portable-<version>.exe` | The app as a single file; runs without installing. |
-| `AssistWriter-Web-<version>.zip` | Web version: unzip and run `Start Assist Writer Web.bat`. |
+| Download | Size | What it is |
+|---|---|---|
+| [**AssistWriter-Setup-0.2.0.exe**](https://github.com/Garionhk/Assist-Writer/releases/download/v0.2.0/AssistWriter-Setup-0.2.0.exe) | 2.1 MB | **Installer (recommended).** Start menu and desktop shortcuts, opens `.awd` files, uninstall from Windows Settings. |
+| [AssistWriter-Portable-0.2.0.exe](https://github.com/Garionhk/Assist-Writer/releases/download/v0.2.0/AssistWriter-Portable-0.2.0.exe) | 5.0 MB | The app as a single file; runs without installing. |
+| [AssistWriter-Web-0.2.0.zip](https://github.com/Garionhk/Assist-Writer/releases/download/v0.2.0/AssistWriter-Web-0.2.0.zip) | 1.5 MB | Web version: unzip and run `Start Assist Writer Web.bat`. |
 
 The files aren't code-signed, so Windows SmartScreen may warn the first time: click **More info → Run anyway**.
 
-**First start:** if Ollama or the AI models are missing, Assist Writer opens its **Setup** window. It shows your graphics card, installs Ollama, and downloads the models with progress bars. You don't need to install anything by hand.
+### Getting started
+
+1. **Install:** run the installer. Before installing, it shows how much graphics card memory the AI needs.
+2. **Set up the AI:** when Assist Writer first opens and Ollama or the AI models are missing, its **Setup** window opens. It shows your graphics card and its memory, installs Ollama, and downloads the models with progress bars. You don't need to install anything by hand. It's also under **AI → Set Up Ollama and Models…**.
+3. **Write:** start typing. When you pause, Assist Writer checks the paragraph and underlines what it would change.
+
+### What you'll see
+
+- **Toolbar** at the top:
+  - File buttons, undo / redo, paragraph style, font and size, bold / italic / underline / strikethrough, lists, quote, **🖼 Image** and alignment.
+  - The writing **Style** picker, **✨ Improve**, **📝 Rewrite doc** and **Live check: On/Off**.
+  - On the right: zoom (− 100% +), **History**, the **中文 / EN** language button and **⚙ Settings**.
+- **The page** in the middle, like a word processor. **Red** wavy underlines mark grammar problems and **blue** ones mark style improvements. Click one to see the original, the suggestion and the reason, with **Accept**, **Reject** and **Ignore always**.
+- **Status bar** at the bottom: the document name (● when unsaved), the Ollama model in use, live checking progress, the active writing style, and the word count.
+- **History panel** (`Ctrl+H`) on the right: every accepted AI change, before → after, with **Undo this change**.
 
 ## Requirements
 
